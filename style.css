@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}   
+html {
+    scroll-behavior: smooth;
+  }
+
+  /*Estilos para la barra de navegacion mobile*/
+.container_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.container_nav a {
+    width: 200px;
+    height: 60px;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.container_nav i {
+    font-size: 1.8em;
+    padding: 5px;
+}
+.nav {
+    width: 100%;
+    background: #111;
+    transition: 1s;
+    opacity: 0;
+    position: absolute;
+    z-index: 100;
+    visibility: hidden;
+}
+.nav a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 1.5em;
+} 
+.nav li {
+    padding: 30px 20px;
+    list-style: none;
+    border-bottom: 2px solid #58FA87;
+}
+.show_nav {
+    opacity: .9;
+    visibility: visible;
+}
+
+/*Estilos para la barra de navegacion desktop*/
+@media screen and (min-width: 880px) {
+    .fa-bars {
+        visibility: hidden;
+    }
+    .nav {
+        visibility: visible;
+        opacity: 1;
+        display: flex;
+        height: 50px;
+        top: 5px;
+        justify-content: center;
+        background: transparent;
+        z-index: 100;
+    }
+    .nav a {
+        
+        transition: .3s;
+    }
+    .nav a:hover {
+        background: #58FA87;
+        border-radius: 4px;
+    }
+    .nav li {
+        padding: 10px;
+        color: #888;
+        border-bottom: none;
+    }
+}
+
+/*Estilos para el banner*/
+.banner {
+    width: 100%;
+    height: 700px;
+    color: #f5f5f5;
+    background: #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_banner {
+    width: 100%;
+    height: 100%;
+}
+.container_banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .7;
+}
+.banner_content {
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    padding: 10px;
+}
+.banner_content h1 {
+    font-size: 9em;
+}
+.banner_content h4 {
+    font-size: 2.5em;
+}
+@media screen and (max-width: 675px) {
+    .banner_content h1 {
+        font-size: 5em;
+    }
+    .banner_content h4 {
+        font-size: 1.5em;
+    }
+}
+
+/*Estilos para la section presentacion*/
+.presentacion {
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f6f6f6;
+}
+.span {
+    width: 50vw;
+    height: 5px;
+    background: #58FA87;
+    margin: 30px;
+}
+.container_presentacion {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #333;
+    font-family: 'Noto Sans', sans-serif;
+}
+.container_presentacion h2 {
+    font-size: 3em;
+    padding: 10px 0;
+}
+.container_presentacion h6 {
+    font-size: 1.5em;
+    padding: 10px 0;
+}
+.container_presentacion p {
+    font-size: 1.3em;
+}
+
+/*Estilos para la section presentacion*/
+.galery {
+    background: #f5f5f5;
+}
+.grid {
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3px;
+    padding: 0 100px;
+}
+.grid_box {
+    background: #000;
+    cursor: pointer;
+    min-width: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all  500ms ease-out;
+}
+.grid_content {
+    top: 0;
+    text-align: center;
+    padding: 10px;
+    color: #e6e6e6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, .7);
+    visibility: hidden;
+    transition: all  500ms ease-out;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grid_content h3 {
+    font-size: 2.3em;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.grid_content a {
+    margin-top: 30px;
+    font-size: 1.7em;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 7px;
+    width: 140px;
+    color: #f5f5f5;
+    text-decoration: none;
+    border: 1px solid #888;
+    transition: .4s;
+}
+.grid_content a:hover {
+    background: #000;
+    color: #fff;
+}
+.grid_box img {
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+}
+.grid_box:hover >.grid_content{
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 620px) {
+    .grid {
+        grid-template-columns:  repeat(auto-fit, minmax(320px, 1fr));
+        padding: 0;
+    }
+    .grid_content p {
+        font-size: 1em;
+        text-align: center;
+    }
+}
+
+.hospedaje {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background: #f5f5f5;
+}
+.hospedaje_title {
+    font-size: 3em;
+    color: #444;
+    width: 700px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+}
+@media screen and (max-width: 725px) {
+    .hospedaje_title {
+        width: 100%;
+        font-size: 2em;
+    }
+}
+.container_hotel {
+    width: 90vw;
+    margin: 90px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.hotel_card {
+    width: 100%;
+    height: 100%;
+    max-width: 750px;
+    box-shadow: 2px 2px 5px #999;
+    display: flex;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+.hotel_img {
+    width: 350px;
+    height: 400px;
+    background-image: url(img/hotel2.jpg);
+    background-size: cover;
+}
+.hotel_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hotel_content {
+    display: flex;
+    flex-direction: column;
+    color: #444;
+    padding: 40px;
+    font-family: 'Montserrat', sans-serif;
+    width: 350px;
+}
+.hotel_content h3 {
+    font-size: 2em;
+}
+.hotel_content i {
+    margin: 20px 0;
+}
+.hotel_info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.hotel_info  i{
+    font-size: 1.5em;
+    padding: 0 20px;
+   
+}
+.hotel_info span {
+    font-size: 1.2em;
+}
+.rango i {
+    font-size: 2em;
+}
+.hotel_social i {
+    font-size: 2em;
+    color: #333;
+    padding: 0px 10px;
+}
